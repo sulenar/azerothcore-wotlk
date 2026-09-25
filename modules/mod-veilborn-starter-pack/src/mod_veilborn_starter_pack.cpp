@@ -3,7 +3,6 @@
 #include "GameTime.h"
 #include "Item.h"
 #include "ItemTemplate.h"
-#include "Loot.h"
 #include "LootMgr.h"
 #include "Player.h"
 #include "PlayerScript.h"
