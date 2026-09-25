@@ -21,44 +21,70 @@ WHERE `entry` IN (@STARTER_PACK, @XP_POTION);
 -- Clone Tiny Titanium Lockbox as a visual/template base.
 -- ------------------------------------------------------------
 
-CREATE TEMPORARY TABLE `vb_starter_item`
-LIKE `item_template`;
-
-INSERT INTO `vb_starter_item`
-SELECT *
-FROM `item_template`
-WHERE `entry` = 45986;
-
-UPDATE `vb_starter_item`
-SET
-    `entry` = @STARTER_PACK,
-    `class` = 15,
-    `subclass` = 0,
-    `displayid` = 54724,
-    `InventoryType` = 0,
-    `AllowableClass` = -1,
-    `AllowableRace` = -1,
-    `ItemLevel` = 1,
-    `name` = 'Veilborn Starter Pack',
-    `description` = 'A sealed starter pack. Opens at level 10.',
-    `RequiredLevel` = 0,
-    `RequiredSkill` = 0,
-    `RequiredSkillRank` = 0,
-    `lockid` = 0,
-    `Flags` = 4,
-    `ContainerSlots` = 0,
-    `stackable` = 1,
-    `maxcount` = 1,
-    `bonding` = 1,
-    `SellPrice` = 0,
-    `BuyPrice` = 0,
-    `ScriptName` = '';
-
 INSERT INTO `item_template`
-SELECT *
-FROM `vb_starter_item`;
-
-DROP TEMPORARY TABLE `vb_starter_item`;
+(
+    `entry`,
+    `class`,
+    `subclass`,
+    `SoundOverrideSubclass`,
+    `name`,
+    `displayid`,
+    `Quality`,
+    `Flags`,
+    `FlagsExtra`,
+    `BuyCount`,
+    `BuyPrice`,
+    `SellPrice`,
+    `InventoryType`,
+    `AllowableClass`,
+    `AllowableRace`,
+    `ItemLevel`,
+    `RequiredLevel`,
+    `RequiredSkill`,
+    `RequiredSkillRank`,
+    `requiredspell`,
+    `requiredhonorrank`,
+    `RequiredCityRank`,
+    `RequiredReputationFaction`,
+    `RequiredReputationRank`,
+    `maxcount`,
+    `stackable`,
+    `ContainerSlots`,
+    `bonding`,
+    `ScriptName`
+)
+VALUES
+(
+    @STARTER_PACK,
+    15,
+    0,
+    0,
+    'Veilborn Starter Pack',
+    54724,
+    3,
+    4,
+    0,
+    1,
+    0,
+    0,
+    0,
+    -1,
+    -1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    1,
+    ''
+);
 
 -- ------------------------------------------------------------
 -- XP Potion
