@@ -16,10 +16,11 @@
 
 namespace VeilbornStarterPack
 {
-    constexpr uint32 STARTER_PACK_ITEM = 46007;
+    constexpr uint32 STARTER_PACK_ITEM = 900001;
     constexpr uint32 XP_POTION_ITEM = 900002;
 
     constexpr uint32 DEFAULT_MIN_LEVEL = 10;
+    constexpr uint32 DEFAULT_POTION_COUNT = 5;
     constexpr uint32 DEFAULT_GOLD = 100;
     constexpr uint32 DEFAULT_POTION_DURATION = 60 * 60;
     constexpr uint32 DEFAULT_XP_MULTIPLIER = 2;
@@ -347,8 +348,7 @@ namespace VeilbornStarterPack
             );
 
             // Consume exactly one potion.
-            uint32 potionCount = 1;
-            player->DestroyItemCount(item, potionCount, true);
+            player->DestroyItemCount(item, 1, true);
 
             uint64 remaining =
                 newExpiration - now;
@@ -374,9 +374,4 @@ void AddSC_mod_veilborn_starter_pack()
 
     new VeilbornStarterPackPlayerScript();
     new VeilbornXpPotionScript();
-}
-
-void Addmod_veilborn_starter_packScripts()
-{
-    AddSC_mod_veilborn_starter_pack();
 }
