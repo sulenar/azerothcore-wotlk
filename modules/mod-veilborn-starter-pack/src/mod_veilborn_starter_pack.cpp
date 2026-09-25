@@ -16,7 +16,7 @@
 
 namespace VeilbornStarterPack
 {
-    constexpr uint32 STARTER_PACK_ITEM = 900001;
+    constexpr uint32 STARTER_PACK_ITEM = 46007;
     constexpr uint32 XP_POTION_ITEM = 900002;
 
     constexpr uint32 DEFAULT_MIN_LEVEL = 10;
