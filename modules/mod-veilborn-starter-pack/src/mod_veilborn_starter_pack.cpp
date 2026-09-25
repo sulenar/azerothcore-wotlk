@@ -149,7 +149,7 @@ namespace VeilbornStarterPack
             {
                 // Inventory is full. Mail is intentionally not used
                 // in this first version.
-                player->SendNotification(
+                ChatHandler(player->GetSession()).SendNotification(
                     "Your Veilborn Starter Pack could not be placed in your inventory. "
                     "Please make room in your bags."
                 );
@@ -165,7 +165,7 @@ namespace VeilbornStarterPack
 
             if (!item)
             {
-                player->SendNotification(
+                ChatHandler(player->GetSession()).SendNotification(
                     "Failed to create your Veilborn Starter Pack."
                 );
 
@@ -174,7 +174,7 @@ namespace VeilbornStarterPack
 
             player->SendNewItem(item, 1, true, false);
 
-            player->SendNotification(
+            ChatHandler(player->GetSession()).SendNotification(
                 "You received a Veilborn Starter Pack. "
                 "It can be opened at level %u.",
                 GetMinLevel()
@@ -205,7 +205,7 @@ namespace VeilbornStarterPack
             uint32 remainingMinutes =
                 static_cast<uint32>((remaining + 59) / 60);
 
-            player->SendNotification(
+            ChatHandler(player->GetSession()).SendNotification(
                 "Your 2x experience effect is active for %u more minute(s).",
                 remainingMinutes
             );
@@ -225,7 +225,7 @@ namespace VeilbornStarterPack
 
             if (player->GetLevel() < GetMinLevel())
             {
-                player->SendNotification(
+                ChatHandler(player->GetSession()).SendNotification(
                     "You must reach level %u before opening the Veilborn Starter Pack.",
                     GetMinLevel()
                 );
@@ -355,7 +355,7 @@ namespace VeilbornStarterPack
             uint32 remainingMinutes =
                 static_cast<uint32>((remaining + 59) / 60);
 
-            player->SendNotification(
+            ChatHandler(player->GetSession()).SendNotification(
                 "Veilborn Training Draught activated. "
                 "Experience x%u for %u minute(s).",
                 GetXpMultiplier(),
