@@ -348,7 +348,8 @@ namespace VeilbornStarterPack
             );
 
             // Consume exactly one potion.
-            player->DestroyItemCount(item, 1, true);
+            uint32 potionCount = 1;
+            player->DestroyItemCount(item, potionCount, true);
 
             uint64 remaining =
                 newExpiration - now;
