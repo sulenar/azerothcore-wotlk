@@ -26,7 +26,7 @@ namespace VeilbornStarterPack
 
     uint32 GetMinLevel()
     {
-        return sConfigMgr->GetIntDefault(
+        return sConfigMgr->GetOption<uint32>(
             "Veilborn.StarterPack.MinLevel",
             DEFAULT_MIN_LEVEL
         );
@@ -34,7 +34,7 @@ namespace VeilbornStarterPack
 
     uint32 GetPotionDuration()
     {
-        return sConfigMgr->GetIntDefault(
+        return sConfigMgr->GetOption<uint32>(
             "Veilborn.StarterPack.PotionDuration",
             DEFAULT_POTION_DURATION
         );
@@ -42,7 +42,7 @@ namespace VeilbornStarterPack
 
     uint32 GetGold()
     {
-        return sConfigMgr->GetIntDefault(
+        return sConfigMgr->GetOption<uint32>(
             "Veilborn.StarterPack.Gold",
             DEFAULT_GOLD
         );
@@ -52,7 +52,7 @@ namespace VeilbornStarterPack
     {
         return std::max(
             1u,
-            sConfigMgr->GetIntDefault(
+            sConfigMgr->GetOption<uint32>(
                 "Veilborn.StarterPack.XpMultiplier",
                 DEFAULT_XP_MULTIPLIER
             )
@@ -61,7 +61,7 @@ namespace VeilbornStarterPack
 
     bool IsEnabled()
     {
-        return sConfigMgr->GetBoolDefault(
+        return sConfigMgr->GetOption<bool>(
             "Veilborn.StarterPack.Enable",
             true
         );
