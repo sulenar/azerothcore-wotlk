@@ -1,0 +1,6 @@
+Veilborn.StarterPack.Enable = 1
+Veilborn.StarterPack.MinLevel = 10
+Veilborn.StarterPack.PotionCount = 5
+Veilborn.StarterPack.Gold = 100
+Veilborn.StarterPack.PotionDuration = 3600
+Veilborn.StarterPack.XpMultiplier = 2
