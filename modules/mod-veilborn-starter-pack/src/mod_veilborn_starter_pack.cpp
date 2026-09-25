@@ -76,7 +76,7 @@ namespace VeilbornStarterPack
         if (!player)
             return 0;
 
-        PreparedQueryResult result = CharacterDatabase.Query(
+        QueryResult result = CharacterDatabase.Query(
             "SELECT `expires_at` "
             "FROM `veilborn_xp_boost` "
             "WHERE `guid` = {}",
