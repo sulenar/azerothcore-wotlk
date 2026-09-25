@@ -20,7 +20,6 @@ namespace VeilbornStarterPack
     constexpr uint32 XP_POTION_ITEM = 900002;
 
     constexpr uint32 DEFAULT_MIN_LEVEL = 10;
-    constexpr uint32 DEFAULT_POTION_COUNT = 5;
     constexpr uint32 DEFAULT_GOLD = 100;
     constexpr uint32 DEFAULT_POTION_DURATION = 60 * 60;
     constexpr uint32 DEFAULT_XP_MULTIPLIER = 2;
@@ -348,7 +347,8 @@ namespace VeilbornStarterPack
             );
 
             // Consume exactly one potion.
-            player->DestroyItemCount(item, 1, true);
+            uint32 potionCount = 1;
+            player->DestroyItemCount(item, potionCount, true);
 
             uint64 remaining =
                 newExpiration - now;
@@ -360,7 +360,7 @@ namespace VeilbornStarterPack
                 "Veilborn Training Draught activated. "
                 "Experience x%u for %u minute(s).",
                 GetXpMultiplier(),
-                remainingMinutes
+                remainingMinutes 
             );
 
             return true;
@@ -374,4 +374,9 @@ void AddSC_mod_veilborn_starter_pack()
 
     new VeilbornStarterPackPlayerScript();
     new VeilbornXpPotionScript();
+}
+
+void Addmod_veilborn_starter_packScripts()
+{
+    AddSC_mod_veilborn_starter_pack();
 }
