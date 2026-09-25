@@ -1,4 +1,5 @@
 #include "Config.h"
+#include "Chat.h"
 #include "DatabaseEnv.h"
 #include "GameTime.h"
 #include "Item.h"
