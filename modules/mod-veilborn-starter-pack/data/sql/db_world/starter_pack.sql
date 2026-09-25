@@ -32,6 +32,12 @@ WHERE `entry` = 45986;
 UPDATE `vb_starter_item`
 SET
     `entry` = @STARTER_PACK,
+    `class` = 15,
+    `subclass` = 0,
+    `InventoryType` = 0,
+    `AllowableClass` = -1,
+    `AllowableRace` = -1,
+    `ItemLevel` = 1,
     `name` = 'Veilborn Starter Pack',
     `description` = 'A sealed starter pack. Opens at level 10.',
     `RequiredLevel` = 0,
